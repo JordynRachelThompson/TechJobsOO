@@ -30,13 +30,14 @@ namespace TechJobs.Controllers
 
             if (jobsViewModel.Column.Equals(JobFieldType.All) || jobsViewModel.Value.Equals(""))
             {
+
                 jobsViewModel.Jobs = jobData.FindByValue(jobsViewModel.Value);
             }
             else
             {
                 jobsViewModel.Jobs = jobData.FindByColumnAndValue(jobsViewModel.Column, jobsViewModel.Value);
             }
-            
+
             jobsViewModel.Title = "Search";
 
             return View("Index", jobsViewModel);
